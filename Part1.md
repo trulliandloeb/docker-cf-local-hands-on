@@ -9,6 +9,7 @@ java remote debug:
 
 ### Target 2: Debug it on local
 introduce docker
+exclude
 2 way, maven tomcat
 ### Target 3: Make a image and run local
 docker network
