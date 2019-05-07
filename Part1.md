@@ -23,3 +23,9 @@ docker network
 docker build
 
 ## Question? Introduce to next part
+deploy the image to CF
+
+container dependency
+
+docker-compose
+
