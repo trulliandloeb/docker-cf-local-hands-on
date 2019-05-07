@@ -4,3 +4,4 @@
 ### Demo for this branch after deployed to CF:
 ### Target 1: Debug it on CF
 ### Target 2: Debug it on local
+### Target 3: Make a image and run local
