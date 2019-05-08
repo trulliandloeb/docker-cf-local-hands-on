@@ -23,7 +23,6 @@
   ```
 * Delete one [DELETE] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
 ## Target 1: Debug it on CF
----
 Reference
 ---
 * [JDWP](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/introclientissues005.html)
@@ -67,12 +66,18 @@ Docker is used to run **software packages** called ***containers***. Containers 
 
 ---
 **History**
+
 Solomon Hykes started Docker in France as an internal project within dotCloud, a platform-as-a-service company, with initial contributions by other dotCloud engineers including Andrea Luzzardi and Francois-Xavier Bourlet. Jeff Lindsay also became involved as an independent collaborator. Docker represents an evolution of dotCloud's proprietary technology, which is itself built on earlier open-source projects such as Cloudlets.
 
 The software debuted to the public in Santa Clara at PyCon in 2013.
 
-Docker was released as open source in March 2013.[12] On March 13, 2014, with the release of version 0.9, Docker dropped LXC as the default execution environment and replaced it with its own libcontainer library written in the Go programming language.
+Docker was released as open source in March 2013.[12] On March 13, 2014, with the release of version 0.9, Docker dropped *LXC* as the default execution environment and replaced it with its *own libcontainer library written in the Go programming language*.
+
+---
+
+```shell
 docker version
+```
 
 ---
 
