@@ -2,15 +2,15 @@
 ## Start from: https://github.com/SAP/cloud-bulletinboard-ads
 ## Branch: solution-11-Develop-Custom-Queries
 ### Demo for this branch after deployed to CF:
-* List all [GET] [https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads](https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads)
-* Add one [POST][https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads](https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads)
+* List all [GET] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads>
+* Add one [POST] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads>
 
   ```json
   {
     "title": "test"
   }
   ````
-* Update one [PUT][https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}](https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id})
+* Update one [PUT]<https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
 
   ```json
   {
@@ -21,7 +21,7 @@
       }
   }
   ```
-* Delete one [DELETE]<https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
+* Delete one [DELETE] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
 ## Target 1: Debug it on CF
 
 cf env set-env unset-env
