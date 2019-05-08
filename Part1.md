@@ -63,9 +63,29 @@ How does docker design, work and implement
 ### What is docker
 Docker is a computer **program** that performs **operating-system-level virtualization**. It was first released in 2013 and is developed by Docker, Inc.
 
-Docker is used to run **software packages** called ***containers***. Containers are isolated from each other and bundle their own application, tools, libraries and configuration files; they can communicate with each other through well-defined channels. All containers are run by a single operating-system kernel and are thus more lightweight than virtual machines. Containers are created from images that specify their precise contents. Images are often created by combining and modifying standard images downloaded from public repositories.
+Docker is used to run **software packages** called ***containers***. Containers are **isolated** from each other and bundle their **own** application, tools, libraries and configuration files; they can **communicate** with each other through well-defined channels. All containers are run by a single operating-system kernel and are thus more **lightweight** than virtual machines. Containers are created from ***images*** that specify their precise contents. Images are often created by *combining and modifying standard images* downloaded from public repositories.
 
-exclude
+---
+**History**
+Solomon Hykes started Docker in France as an internal project within dotCloud, a platform-as-a-service company, with initial contributions by other dotCloud engineers including Andrea Luzzardi and Francois-Xavier Bourlet. Jeff Lindsay also became involved as an independent collaborator. Docker represents an evolution of dotCloud's proprietary technology, which is itself built on earlier open-source projects such as Cloudlets.
+
+The software debuted to the public in Santa Clara at PyCon in 2013.
+
+Docker was released as open source in March 2013.[12] On March 13, 2014, with the release of version 0.9, Docker dropped LXC as the default execution environment and replaced it with its own libcontainer library written in the Go programming language.
+docker version
+
+---
+
+Hyper-v
+
+### Image
+
+> *If need* docker image rm hello-world
+```shell
+docker image pull hello-world
+docker image ls -a
+```
+
 
 2 way, maven tomcat
 
