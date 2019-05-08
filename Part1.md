@@ -29,6 +29,10 @@ Reference
 [JDWP](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/introclientissues005.html)
 [JPDA](https://docs.oracle.com/javase/8/docs/technotes/guides/jpda/conninv.html#Invocation)
 [Java HotSpot VM Options](https://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)
+[-X Command-line Options](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html)
+---
+We <font color='red'>cannot</font> debug use the same process on CF.
+We need use <font color='blue'>remote debug</font>.
 
 cf env set-env unset-env
 
