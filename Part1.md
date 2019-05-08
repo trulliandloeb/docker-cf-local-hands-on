@@ -10,7 +10,7 @@
     "title": "test"
   }
   ````
-* Update one [PUT]<https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
+* Update one [PUT] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
 
   ```json
   {
@@ -23,6 +23,12 @@
   ```
 * Delete one [DELETE] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
 ## Target 1: Debug it on CF
+---
+Reference
+---
+[1]: https://huihut.github.io/  "title"
+[1]: https://huihut.github.io/  'title'
+[1]: https://huihut.github.io/  (title)
 
 cf env set-env unset-env
 
