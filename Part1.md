@@ -26,9 +26,9 @@
 ---
 Reference
 ---
-[1](https://huihut.github.io/)
-[1]: https://huihut.github.io/  'title'
-[1]: https://huihut.github.io/  (title)
+[JDWP](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/introclientissues005.html)
+[JPDA](https://docs.oracle.com/javase/8/docs/technotes/guides/jpda/conninv.html#Invocation)
+[Java HotSpot VM Options](https://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)
 
 cf env set-env unset-env
 
