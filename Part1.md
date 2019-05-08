@@ -21,8 +21,9 @@
       }
   }
   ```
-* Delete one [DELETE][https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}](https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id})
+* Delete one [DELETE]<https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
 ## Target 1: Debug it on CF
+
 cf env set-env unset-env
 
 java remote debug:
