@@ -39,6 +39,12 @@ set environment variable ***JBP_CONFIG_DEBUG*** to ***{enabled: true}***
 
 cf set-env bill-bulletinboard-ads JBP_CONFIG_DEBUG '{enabled: true}'
 
+2. Use original way
+
+add arguments ***-Xdebug -Xrunjdwp*** to jvm
+
+cf set-env bill-bulletinboard-ads JAVA_OPTS '-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8999'
+
 <font color=gray size=72>color=gray</font>
 cf env set-env unset-env
 
