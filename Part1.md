@@ -34,8 +34,9 @@ Reference
 * [How do I use the JAVA_OPTS environment variable?](https://stackoverflow.com/questions/5241743/how-do-i-use-the-java-opts-environment-variable)
 * [Accessing Apps with SSH](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)
 ---
-We <font color='red'>cannot</font> debug use the same process on CF.
-We need use <font color='blue'>remote debug</font>.
+We <span style="color:red;">cannot</span> debug use the same process on CF.
+
+We need use <span style="color:blue;">remote debug</span>.
 1. CF provide an easy way
 
 set environment variable ***JBP_CONFIG_DEBUG*** to ***{enabled: true}***
@@ -49,12 +50,6 @@ cf ssh -L ***8000:localhost:8000*** bill-bulletinboard-ads
 add arguments ***-Xdebug -Xrunjdwp*** to jvm
 
 cf set-env bill-bulletinboard-ads JAVA_OPTS '-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8999'
-
-<font color=gray size=72>color=gray</font>
-cf env set-env unset-env
-
-<span style="color:red;">这是比font标签更好的方式。可以试试。</span>
-
 ## Target 2: Debug it on local
 **Exclusion**
 
@@ -87,11 +82,9 @@ Docker was released as open source in March 2013.[12] On March 13, 2014, with th
 ```shell
 docker version
 ```
-Hyper-v
-
-
+Hyper-v: use on Windows
 ### Image
-> *If need* docker image rm hello-world
+> *If need* \<docker image rm hello-world\>
 ```shell
 docker image pull hello-world
 docker image ls -a
@@ -103,7 +96,73 @@ docker container ls -a
 docker container start -i {container-id}
 docker container rm {container-id}
 ```
+### Start from [PostgreSQL](https://hub.docker.com/_/postgres)
+```shell
+docker run
+    --name some-postgres \
+    -e POSTGRES_PASSWORD=test123! \
+    -e POSTGRES_USER=testuser \
+    -e POSTGRES_DB=test \
+    -it \
+    postgres:9.4-alpine
+```
+Expose the port
+```shell
+docker run --rm \
+    --name some-postgres \
+    -e POSTGRES_PASSWORD=test123! \
+    -e POSTGRES_USER=testuser \
+    -e POSTGRES_DB=test \
+    -it \
+    -p 127.0.0.1:5432:5432 \
+    postgres:9.4-alpine
+```
+Use psql client in Docker
+```shell
+docker run --rm \
+    --name some-postgres-client \
+    -it \
+    --network host \
+    postgres:9.4-alpine psql \
+    -h localhost -U testuser -d test
+```
+```SQL
+\c
+\d
+CREATE TABLE user_tbl(name VARCHAR(20), signup_date DATE);
+INSERT INTO user_tbl(name, signup_date) VALUES('张三', '2013-12-22');
+SELECT * FROM user_tbl;
+\q
+```
+Better way to use psql
+```shell
+#if need
+#docker network rm bill-network
+docker network ls
+docker network create bill-network
+docker run --rm \
+    --name some-postgres \
+    -e POSTGRES_PASSWORD=test123! \
+    -e POSTGRES_USER=testuser \
+    -e POSTGRES_DB=test \
+    -it \
+    --network bill-network \
+    postgres:9.4-alpine
+docker run --rm \
+    --name some-postgres-client \
+    -it \
+    --network bill-network \
+    postgres:9.4-alpine psql \
+    -h some-postgres -U testuser -d test
+```
+Debug the app directly from local, expose the port
 
+Debug from maven:
+
+Debug from Tomcat:
+
+### Reference
+<https://docs.docker.com/engine/reference/run/>
 2 way, maven tomcat
 
 ## Target 3: Make a image and run local
@@ -208,11 +267,11 @@ Bob-->Alice: I am good thanks!
 
 ### 7. 绘制表格
 
-| 项目        | 价格   |  数量  |
-| --------   | -----:  | :----:  |
-| 计算机     | \$1600 |   5     |
-| 手机        |   \$12   |   12   |
-| 管线        |    \$1    |  234  |
+| 项目   |   价格 | 数量  |
+| ------ | -----: | :---: |
+| 计算机 | \$1600 |   5   |
+| 手机   |   \$12 |  12   |
+| 管线   |    \$1 |  234  |
 
 ### 8. 更详细语法说明
 
