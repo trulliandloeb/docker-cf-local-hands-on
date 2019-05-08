@@ -3,7 +3,13 @@
 ## Branch: solution-11-Develop-Custom-Queries
 ### Demo for this branch after deployed to CF:
 * List all [GET] [https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads](https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads)
-* bcd
+* Add one [POST][https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads](https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads)
+
+  `
+  {
+    "title": "test"
+  }
+  `
 
   abcd
 
