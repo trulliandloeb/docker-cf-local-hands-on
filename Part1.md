@@ -66,7 +66,7 @@ Solomon Hykes started Docker in France as an internal project within dotCloud, a
 
 The software debuted to the public in Santa Clara at PyCon in 2013.
 
-Docker was released as open source in March 2013.[12] On March 13, 2014, with the release of version 0.9, Docker dropped *LXC* as the default execution environment and replaced it with its *own libcontainer library written in the Go programming language*.
+Docker was released as open source in March 2013. On March 13, 2014, with the release of version 0.9, Docker dropped *LXC* as the default execution environment and replaced it with its *own libcontainer library written in the Go programming language*.
 
 * On September 19, 2013, Red Hat and Docker announced a collaboration around Fedora, Red Hat Enterprise Linux, and OpenShift.
 * In November 2014 Docker container services were announced for the Amazon Elastic Compute Cloud (EC2).
