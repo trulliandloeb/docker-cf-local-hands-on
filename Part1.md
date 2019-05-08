@@ -33,6 +33,7 @@ Reference
 * [New Cloud Foundry Java Buildpack Improves Developer Diagnostic Tools](https://content.pivotal.io/blog/new-cloud-foundry-java-buildpack-improves-developer-diagnostic-tools)
 * [What are Java command line options to set to allow JVM to be remotely debugged?](https://stackoverflow.com/questions/138511/what-are-java-command-line-options-to-set-to-allow-jvm-to-be-remotely-debugged)
 * [How do I use the JAVA_OPTS environment variable?](https://stackoverflow.com/questions/5241743/how-do-i-use-the-java-opts-environment-variable)
+* [Accessing Apps with SSH](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)
 ---
 We <font color='red'>cannot</font> debug use the same process on CF.
 We need use <font color='blue'>remote debug</font>.
@@ -41,6 +42,8 @@ We need use <font color='blue'>remote debug</font>.
 set environment variable ***JBP_CONFIG_DEBUG*** to ***{enabled: true}***
 
 cf set-env bill-bulletinboard-ads JBP_CONFIG_DEBUG '{enabled: true}'
+
+cf ssh -L ***8000:localhost:8000*** bill-bulletinboard-ads
 
 2. Use original way
 
@@ -52,12 +55,6 @@ cf set-env bill-bulletinboard-ads JAVA_OPTS '-Xdebug -Xrunjdwp:transport=dt_sock
 cf env set-env unset-env
 
 <span style="color:red;">这是比font标签更好的方式。可以试试。</span>
-
-
-java remote debug:
-
-2 way, cf, basic
-
 
 ## Target 2: Debug it on local
 introduce docker
