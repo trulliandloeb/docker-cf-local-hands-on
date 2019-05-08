@@ -26,7 +26,7 @@
 ---
 Reference
 ---
-[1]: https://huihut.github.io/  "title"
+[1](https://huihut.github.io/)
 [1]: https://huihut.github.io/  'title'
 [1]: https://huihut.github.io/  (title)
 
