@@ -13,13 +13,13 @@
 * Update one [PUT][https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}](https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id})
 
   ```json
-{
-    "title": "test3update",
-    "id": "3",
-    "metadata": {
-        "version": "2"
-    }
-}
+  {
+      "title": "test3update",
+      "id": "3",
+      "metadata": {
+          "version": "2"
+      }
+  }
   ```
 ## Target 1: Debug it on CF
 cf env set-env unset-env
