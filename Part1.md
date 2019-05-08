@@ -34,7 +34,11 @@ Reference
 We <font color='red'>cannot</font> debug use the same process on CF.
 We need use <font color='blue'>remote debug</font>.
 1. CF provide an easy way
+
 set environment variable ***JBP_CONFIG_DEBUG*** to ***{enabled: true}***
+
+cf set-env bill-bulletinboard-ads JBP_CONFIG_DEBUG '{enabled: true}'
+
 <font color=gray size=72>color=gray</font>
 cf env set-env unset-env
 
