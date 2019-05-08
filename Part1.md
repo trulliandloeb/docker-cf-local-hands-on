@@ -101,6 +101,7 @@ docker image ls -a
 docker run hello-world
 docker container ls -a
 docker container start -i {container-id}
+docker container rm {container-id}
 ```
 
 2 way, maven tomcat
