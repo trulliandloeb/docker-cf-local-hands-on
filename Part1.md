@@ -36,6 +36,9 @@ We need use <font color='blue'>remote debug</font>.
 <font color=gray size=72>color=gray</font>
 cf env set-env unset-env
 
+<span style="color:red;">这是比font标签更好的方式。可以试试。</span>
+
+
 java remote debug:
 
 2 way, cf, basic
