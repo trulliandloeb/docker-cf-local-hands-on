@@ -73,24 +73,35 @@ The software debuted to the public in Santa Clara at PyCon in 2013.
 
 Docker was released as open source in March 2013.[12] On March 13, 2014, with the release of version 0.9, Docker dropped *LXC* as the default execution environment and replaced it with its *own libcontainer library written in the Go programming language*.
 
+* On September 19, 2013, Red Hat and Docker announced a collaboration around Fedora, Red Hat Enterprise Linux, and OpenShift.
+* In November 2014 Docker container services were announced for the Amazon Elastic Compute Cloud (EC2).
+* On November 10, 2014, Docker announced a partnership with Stratoscale.
+* On December 4, 2014, IBM announced a strategic partnership with Docker that enables Docker to integrate more closely with the IBM Cloud.
+* On June 22, 2015, Docker and several other companies announced that they are working on a new vendor and operating-system-independent standard for software containers.
+* As of October 24, 2015, the project had over 25,600 GitHub stars (making it the 20th most-starred GitHub project), over 6,800 forks, and nearly 1,100 contributors.
+* In April 2016, Windocks, an independent ISV released a port of Docker's open source project to Windows, supporting Windows Server 2012 R2 and Server 2016, with all editions of SQL Server 2008 onward.
+* A May 2016 analysis showed the following organizations as main contributors to Docker: The Docker team, Cisco, Google, Huawei, IBM, Microsoft, and Red Hat.
+* On October 4, 2016, Solomon Hykes announced InfraKit as a new self-healing container infrastructure effort for Docker container environments.
+* A January 2017 analysis of LinkedIn profile mentions showed Docker presence grew by 160% in 2016.
 ---
-
 ```shell
 docker version
 ```
-
----
-
 Hyper-v
 
-### Image
 
+### Image
 > *If need* docker image rm hello-world
 ```shell
 docker image pull hello-world
 docker image ls -a
 ```
-
+### Container
+```shell
+docker run hello-world
+docker container ls -a
+docker container start -i {container-id}
+```
 
 2 way, maven tomcat
 
