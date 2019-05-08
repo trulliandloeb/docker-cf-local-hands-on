@@ -2,27 +2,107 @@
 ## Start from: https://github.com/SAP/cloud-bulletinboard-ads
 ### Branch: solution-11-Develop-Custom-Queries
 ### Demo for this branch after deployed to CF:
-* List all [GET] [https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads](https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads)
-* bcd
+* List all [GET] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads>
+* Add one [POST] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads>
 
-  abcd
+  ```json
+  {
+    "title": "test"
+  }
+  ````
+* Update one [PUT] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
 
-    `
-int main() {}
-    `
-* efg
+  ```json
+  {
+      "title": "test3update",
+      "id": "3",
+      "metadata": {
+          "version": "2"
+      }
+  }
+  ```
+* Delete one [DELETE] <https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com/api/v1/ads/{id}>
 ## Target 1: Debug it on CF
+Reference
+---
+* [JDWP](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/introclientissues005.html)
+* [JPDA](https://docs.oracle.com/javase/8/docs/technotes/guides/jpda/conninv.html#Invocation)
+* [Java HotSpot VM Options](https://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)
+* [-X Command-line Options](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html)
+* [New Cloud Foundry Java Buildpack Improves Developer Diagnostic Tools](https://content.pivotal.io/blog/new-cloud-foundry-java-buildpack-improves-developer-diagnostic-tools)
+* [What are Java command line options to set to allow JVM to be remotely debugged?](https://stackoverflow.com/questions/138511/what-are-java-command-line-options-to-set-to-allow-jvm-to-be-remotely-debugged)
+* [How do I use the JAVA_OPTS environment variable?](https://stackoverflow.com/questions/5241743/how-do-i-use-the-java-opts-environment-variable)
+* [Accessing Apps with SSH](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html)
+---
+We <font color='red'>cannot</font> debug use the same process on CF.
+We need use <font color='blue'>remote debug</font>.
+1. CF provide an easy way
+
+set environment variable ***JBP_CONFIG_DEBUG*** to ***{enabled: true}***
+
+cf set-env bill-bulletinboard-ads JBP_CONFIG_DEBUG '{enabled: true}'
+
+cf ssh -L ***8000:localhost:8000*** bill-bulletinboard-ads
+
+2. Use original way
+
+add arguments ***-Xdebug -Xrunjdwp*** to jvm
+
+cf set-env bill-bulletinboard-ads JAVA_OPTS '-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8999'
+
+<font color=gray size=72>color=gray</font>
 cf env set-env unset-env
 
-java remote debug:
-
-2 way, cf, basic
-
+<span style="color:red;">这是比font标签更好的方式。可以试试。</span>
 
 ## Target 2: Debug it on local
-introduce docker
+**Exclusion**
 
-exclude
+How does docker design, work and implement
+### What is docker
+Docker is a computer **program** that performs **operating-system-level virtualization**. It was first released in 2013 and is developed by Docker, Inc.
+
+Docker is used to run **software packages** called ***containers***. Containers are **isolated** from each other and bundle their **own** application, tools, libraries and configuration files; they can **communicate** with each other through well-defined channels. All containers are run by a single operating-system kernel and are thus more **lightweight** than virtual machines. Containers are created from ***images*** that specify their precise contents. Images are often created by *combining and modifying standard images* downloaded from public repositories.
+
+---
+**History**
+
+Solomon Hykes started Docker in France as an internal project within dotCloud, a platform-as-a-service company, with initial contributions by other dotCloud engineers including Andrea Luzzardi and Francois-Xavier Bourlet. Jeff Lindsay also became involved as an independent collaborator. Docker represents an evolution of dotCloud's proprietary technology, which is itself built on earlier open-source projects such as Cloudlets.
+
+The software debuted to the public in Santa Clara at PyCon in 2013.
+
+Docker was released as open source in March 2013.[12] On March 13, 2014, with the release of version 0.9, Docker dropped *LXC* as the default execution environment and replaced it with its *own libcontainer library written in the Go programming language*.
+
+* On September 19, 2013, Red Hat and Docker announced a collaboration around Fedora, Red Hat Enterprise Linux, and OpenShift.
+* In November 2014 Docker container services were announced for the Amazon Elastic Compute Cloud (EC2).
+* On November 10, 2014, Docker announced a partnership with Stratoscale.
+* On December 4, 2014, IBM announced a strategic partnership with Docker that enables Docker to integrate more closely with the IBM Cloud.
+* On June 22, 2015, Docker and several other companies announced that they are working on a new vendor and operating-system-independent standard for software containers.
+* As of October 24, 2015, the project had over 25,600 GitHub stars (making it the 20th most-starred GitHub project), over 6,800 forks, and nearly 1,100 contributors.
+* In April 2016, Windocks, an independent ISV released a port of Docker's open source project to Windows, supporting Windows Server 2012 R2 and Server 2016, with all editions of SQL Server 2008 onward.
+* A May 2016 analysis showed the following organizations as main contributors to Docker: The Docker team, Cisco, Google, Huawei, IBM, Microsoft, and Red Hat.
+* On October 4, 2016, Solomon Hykes announced InfraKit as a new self-healing container infrastructure effort for Docker container environments.
+* A January 2017 analysis of LinkedIn profile mentions showed Docker presence grew by 160% in 2016.
+---
+```shell
+docker version
+```
+Hyper-v
+
+
+### Image
+> *If need* docker image rm hello-world
+```shell
+docker image pull hello-world
+docker image ls -a
+```
+### Container
+```shell
+docker run hello-world
+docker container ls -a
+docker container start -i {container-id}
+docker container rm {container-id}
+```
 
 2 way, maven tomcat
 
