@@ -178,6 +178,8 @@ tail -f ./logs/catalina.out
 * <http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html>
 * <https://labs.play-with-docker.com/>
 ## Target 3: Make a image and run local
+What about make our app as a Docker image and run it?
+---
 docker network
 
 docker build
