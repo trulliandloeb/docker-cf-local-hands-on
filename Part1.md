@@ -59,6 +59,9 @@ Docker is a computer **program** that performs **operating-system-level virtuali
 
 Docker is used to run **software packages** called ***containers***. Containers are **isolated** from each other and bundle their **own** application, tools, libraries and configuration files; they can **communicate** with each other through well-defined channels. All containers are run by a single operating-system kernel and are thus more **lightweight** than virtual machines. Containers are created from ***images*** that specify their precise contents. Images are often created by *combining and modifying standard images* downloaded from public repositories.
 
+![Virtual Machine](https://raw.githubusercontent.com/trulliandloeb/docker-cf-local-hands-on/master/resource/VM%402x.png)
+
+![Container](https://raw.githubusercontent.com/trulliandloeb/docker-cf-local-hands-on/master/resource/Container%402x.png)
 ---
 **History**
 
