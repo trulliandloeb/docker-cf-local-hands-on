@@ -172,8 +172,7 @@ tail -f ./logs/catalina.out
 ```
 ### Reference
 * <https://docs.docker.com/engine/reference/run/>
-2 way, maven tomcat
-
+* <http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html>
 ## Target 3: Make a image and run local
 docker network
 
