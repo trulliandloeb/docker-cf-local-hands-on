@@ -158,11 +158,19 @@ docker run --rm \
 Debug the app directly from local, expose the port
 
 Debug from maven:
-
+```shell
+export MAVEN_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=127.0.0.1:8000'
+mvn tomcat7:run
+```
 Debug from Tomcat:
-
+```shell
+cd path/to/tomcat
+./bin/catalina.sh start
+tail -f ./logs/catalina.out
+./bin/catalina.sh stop
+```
 ### Reference
-<https://docs.docker.com/engine/reference/run/>
+* <https://docs.docker.com/engine/reference/run/>
 2 way, maven tomcat
 
 ## Target 3: Make a image and run local
