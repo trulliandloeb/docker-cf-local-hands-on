@@ -165,6 +165,7 @@ mvn tomcat7:run
 Debug from Tomcat:
 ```shell
 cd path/to/tomcat
+export CATALINA_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=127.0.0.1:8000'
 ./bin/catalina.sh start
 tail -f ./logs/catalina.out
 ./bin/catalina.sh stop
