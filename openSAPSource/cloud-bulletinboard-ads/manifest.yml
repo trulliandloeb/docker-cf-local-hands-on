@@ -1,10 +1,10 @@
 ---
 applications:
-- name: bulletinboard-ads
-  host: bulletinboard-ads-<<your user id>>
-  memory: 800M
+- name: bill-bulletinboard-ads
+  #host: bulletinboard-ads-<<your user id>>
+  memory: 1024M
   path: target/bulletinboard-ads.war
-  buildpack: https://github.com/cloudfoundry/java-buildpack.git#v4.6
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
   # buildpack: sap_java_buildpack
   # health-check-type: http
   # health-check-http-endpoint: /health
@@ -16,24 +16,7 @@ applications:
       JAVA_OPTS: -Djava.security.egd=file:///dev/./urandom
       USER_ROUTE: 'https://opensapcp5userservice.cfapps.eu10.hana.ondemand.com'
   services:
-  - postgres-bulletinboard-ads
-  - applogs-bulletinboard
-  - mq-bulletinboard
-
-- name: approuter
-  host: approuter-<<your user id>>
-  path: src/main/approuter
-  buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.10
-  memory: 128M
-  env:
-    XSAPPNAME: bulletinboard-<<your user id>>
-    TENANT_HOST_PATTERN: "^(.*)-approuter-<<your user id>>.cfapps.<<region>>.hana.ondemand.com"
-    destinations: >
-      [{
-         "name":"ads-destination",
-         "url" :"https://bulletinboard-ads-<<your user id>>.cfapps.<<region>>.hana.ondemand.com",
-         "forwardAuthToken": true}
-      ]
-  services:
-    - applogs-bulletinboard
-    - uaa-bulletinboard
+  - postgreSQLv9.4-dev
+  - application-logging
+  - rabbitMQv3.6-dev
+  - uaa-bulletinboard
