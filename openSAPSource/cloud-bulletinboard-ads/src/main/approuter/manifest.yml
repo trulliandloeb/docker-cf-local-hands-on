@@ -1,0 +1,23 @@
+---
+# $   cf map-route approuter cfapps.<<region>>.hana.ondemand.com -n <<your tenant>>-approuter-<<your user id>>
+# <<your tenant>> = i333244trial
+applications:
+- name: approuter
+  host: approuter-i333244
+  #path: src/main/approuter
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
+  memory: 128M
+  env:
+    XSAPPNAME: bulletinboard-i333244
+    TENANT_HOST_PATTERN: "^(.*)-approuter-i333244.cfapps.us30.hana.ondemand.com"
+    destinations: >
+      [
+        {
+            "name":"ads-destination",
+            "url":"https://bill-bulletinboard-ads.cfapps.us30.hana.ondemand.com",
+            "forwardAuthToken": true
+        }
+      ]
+  services:
+    - application-logging
+    - uaa-bulletinboard
