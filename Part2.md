@@ -4,6 +4,8 @@ cf service-keys postgreSQLv9.4-dev
 cf create-service-key postgreSQLv9.4-dev access-key
 cf service-key postgreSQLv9.4-dev access-key
 
+https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-services.html
+
 {
  "dbname": "HeaHvsu6V9KBD4PY",
  "end_points": [
