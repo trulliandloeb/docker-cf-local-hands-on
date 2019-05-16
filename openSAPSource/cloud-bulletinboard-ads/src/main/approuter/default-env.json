@@ -1,0 +1,9 @@
+{
+    "destinations": [
+        {
+            "name": "ads-destination",
+            "url": "http://localhost:8080",
+            "forwardAuthToken": true
+        }
+    ]
+}
