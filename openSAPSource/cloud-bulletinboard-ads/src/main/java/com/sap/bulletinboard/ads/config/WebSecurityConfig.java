@@ -12,6 +12,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 
 import com.sap.xs2.security.commons.SAPOfflineTokenServicesCloud;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Configuration
 @EnableWebSecurity
 @EnableResourceServer
@@ -20,9 +23,11 @@ public class WebSecurityConfig extends ResourceServerConfigurerAdapter {
     private static final String DISPLAY_SCOPE_LOCAL = "Display";
     private static final String UPDATE_SCOPE_LOCAL = "Update";
     public static final String REGEX_TENANT_INDEX = "(!t\\d+)?.";
-    private static final String XSAPPNAME = "bulletinboard-<<your user id>>";
+    private static final String XSAPPNAME = "bulletinboard-i333244";
     public static final String DISPLAY_SCOPE = XSAPPNAME + "." + DISPLAY_SCOPE_LOCAL;
     public static final String UPDATE_SCOPE = XSAPPNAME + "." + UPDATE_SCOPE_LOCAL;
+    
+    private static final Logger logger = LoggerFactory.getLogger(WebSecurityConfig.class);
 
     // configure Spring Security, demand authentication and specific scopes
     @Override
@@ -33,6 +38,9 @@ public class WebSecurityConfig extends ResourceServerConfigurerAdapter {
         String hasScopeDisplay = "#oauth2.hasScopeMatching('" + XSAPPNAME + REGEX_TENANT_INDEX + DISPLAY_SCOPE_LOCAL
                 + "')";
 
+        logger.warn("hasScopeUpdate: {}", hasScopeUpdate);
+        logger.warn("hasScopeDisplay: {}", hasScopeDisplay);
+        
         // @formatter:off
         http
             .sessionManagement()
