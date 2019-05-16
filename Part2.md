@@ -99,3 +99,7 @@ http://cli.cloudfoundry.org/en-US/cf/
 https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#routes
 
 https://docs.run.pivotal.io/devguide/deploy-apps/routes-domains.html
+
+https://blogs.sap.com/2018/08/31/how-to-get-an-access-token-from-the-xsuaa-service-for-external-api-accesses-using-the-password-grant-with-client-and-user-credentials-method/
+
+https://docs.cloudfoundry.org/api/uaa/version/4.31.0/index.html
