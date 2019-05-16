@@ -1,8 +1,28 @@
 # Part2
 
 cf service-keys postgreSQLv9.4-dev
+
 cf create-service-key postgreSQLv9.4-dev access-key
+
 cf service-key postgreSQLv9.4-dev access-key
+
+docker run --rm \
+    --name some-postgres \
+    -e POSTGRES_PASSWORD=test123! \
+    -e POSTGRES_USER=testuser \
+    -e POSTGRES_DB=test \
+    -it \
+    -p 5432:5432 \
+    --network bill-network \
+    postgres:9.4-alpine
+    
+docker run --rm \
+    --name my-rmq \
+    -it \
+    --hostname my-rmq \
+    -p 5672:5672 \
+    --network bill-network \
+    rabbitmq:3.7.14-alpine
 
 https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-services.html
 
