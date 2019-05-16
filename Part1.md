@@ -101,7 +101,7 @@ docker container rm {container-id}
 ```
 ### Start from [PostgreSQL](https://hub.docker.com/_/postgres)
 ```shell
-docker run
+docker run \
     --name some-postgres \
     -e POSTGRES_PASSWORD=test123! \
     -e POSTGRES_USER=testuser \
