@@ -94,3 +94,8 @@ cf ssh -L 5672:10.11.241.0:42979 bill-bulletinboard-ads
 
 export VCAP_SERVICES='{ "postgresql-9.3":[ { "name":"postgresql-lite", "label":"postgresql-9.3", "credentials":{ "dbname":"HeaHvsu6V9KBD4PY", "hostname":"127.0.0.1", "password":"qC5gZ7DHO5FY59sG", "port":"5432", "uri":"postgres://lNTt6T-3FV7veQuq:qC5gZ7DHO5FY59sG@127.0.0.1:5432/HeaHvsu6V9KBD4PY", "username":"lNTt6T-3FV7veQuq" }, "tags":[ "relational", "postgresql" ], "plan":"free" } ], "rabbitmq-lite":[ { "credentials":{ "hostname":"127.0.0.1", "password":"g041Z6BpHKgAkB9k", "uri":"amqp://wGk7ZIrnn6apZNFH:g041Z6BpHKgAkB9k@127.0.0.1:5672", "username":"wGk7ZIrnn6apZNFH" }, "label":"rabbitmq-lite", "tags":[ "rabbitmq33", "rabbitmq", "amqp" ] } ] }'
 
+http://cli.cloudfoundry.org/en-US/cf/
+
+https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#routes
+
+https://docs.run.pivotal.io/devguide/deploy-apps/routes-domains.html
