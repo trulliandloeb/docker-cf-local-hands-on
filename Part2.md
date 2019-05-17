@@ -26,6 +26,8 @@ docker run --rm \
 
 https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-services.html
 
+https://github.com/auth0/node-jsonwebtoken
+
 {
  "dbname": "HeaHvsu6V9KBD4PY",
  "end_points": [
