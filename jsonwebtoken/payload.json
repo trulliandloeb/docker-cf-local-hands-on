@@ -1,0 +1,16 @@
+{
+  "given_name": "Bill",
+  "family_name": "Tang",
+  "scope": [
+    "bulletinboard-i333244.Update",
+    "openid",
+    "bulletinboard-i333244.Display"
+  ],
+  "client_id": "bill-demo-client-id",
+  "grant_type": "password",
+  "user_id": "bill-demo-user-id",
+  "origin": "ldap",
+  "user_name": "bill.tang@sap.com",
+  "email": "bill.tang@sap.com",
+  "iss": "bill-demo-issuer"
+}

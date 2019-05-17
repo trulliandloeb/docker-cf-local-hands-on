@@ -51,6 +51,7 @@ public class WebSecurityConfig extends ResourceServerConfigurerAdapter {
             .authorizeRequests()
                 // enable OAuth2 checks
                 .antMatchers(GET, "/health", "/").permitAll() //used as health check on CF: must be accessible by "anybody"
+                .antMatchers(GET, "/env**", "/").permitAll()
                 .antMatchers(POST, "/api/v1/ads/**").access(hasScopeUpdate)
                 .antMatchers(PUT, "/api/v1/ads/**").access(hasScopeUpdate)
                 .antMatchers(DELETE, "/api/v1/ads/**").access(hasScopeUpdate)
