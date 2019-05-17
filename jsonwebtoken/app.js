@@ -1,8 +1,8 @@
 var jwt = require('jsonwebtoken');
 var fs = require('fs');
 var payload = require('./payload.json');
-var now = Math.floor(Date.now() / 1000);
-payload.auth_time = payload.iat = now;
+
+payload.auth_time = payload.iat = Math.floor(Date.now() / 1000);
 
 var privateKey = fs.readFileSync('./rsa_private_unencrypted.pem');
 jwt.sign(payload, privateKey, {
