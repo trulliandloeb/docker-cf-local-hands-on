@@ -1,16 +1,40 @@
 {
+  "jti": "369824b711184b90835b8fad7e39d1db",
+  "ext_attr": {
+    "enhancer": "XSUAA",
+    "zdn": "i333244trial"
+  },
+  "xs.system.attributes": {
+    "xs.rolecollections": [
+      "bill_viewer",
+      "bill_Advertiser"
+    ]
+  },
   "given_name": "Bill",
+  "xs.user.attributes": {},
   "family_name": "Tang",
+  "sub": "f5d47ee6-cc82-41ff-9d89-a1b1ce258b88",
   "scope": [
-    "bulletinboard-i333244.Update",
+    "bulletinboard-i333244!t431.Update",
     "openid",
-    "bulletinboard-i333244.Display"
+    "bulletinboard-i333244!t431.Display"
   ],
-  "client_id": "bill-demo-client-id",
+  "client_id": "sb-bulletinboard-i333244!t431",
+  "cid": "sb-bulletinboard-i333244!t431",
+  "azp": "sb-bulletinboard-i333244!t431",
   "grant_type": "password",
-  "user_id": "bill-demo-user-id",
+  "user_id": "f5d47ee6-cc82-41ff-9d89-a1b1ce258b88",
   "origin": "ldap",
   "user_name": "bill.tang@sap.com",
   "email": "bill.tang@sap.com",
-  "iss": "bill-demo-issuer"
+  "auth_time": 1557975381,
+  "rev_sig": "6962510a",
+  "iat": 1557975381,
+  "iss": "http://i333244trial.localhost:8080/uaa/oauth/token",
+  "zid": "093365a4-c6e9-4419-8f30-5e6eae8159b8",
+  "aud": [
+    "sb-bulletinboard-i333244!t431",
+    "openid",
+    "bulletinboard-i333244!t431"
+  ]
 }
