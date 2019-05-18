@@ -8,6 +8,26 @@
 
 cf service-key postgreSQLv9.4-dev access-key
 ```
+```json
+{
+ "dbname": "HeaHvsu6V9KBD4PY",
+ "end_points": [
+  {
+   "host": "10.11.241.0",
+   "network_id": "SF",
+   "port": "52791"
+  }
+ ],
+ "hostname": "10.11.241.0",
+ "password": "qC5gZ7DHO5FY59sG",
+ "port": "52791",
+ "ports": {
+  "5432/tcp": "52791"
+ },
+ "uri": "postgres://lNTt6T-3FV7veQuq:qC5gZ7DHO5FY59sG@10.11.241.0:52791/HeaHvsu6V9KBD4PY",
+ "username": "lNTt6T-3FV7veQuq"
+}
+```
 docker run --rm \
     --name some-postgres \
     -e POSTGRES_PASSWORD=test123! \
