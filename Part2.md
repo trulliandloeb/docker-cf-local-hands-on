@@ -2,8 +2,9 @@
 ## Target: debug local app via CF's service
 *Use Branch: solution-21-Receive-MQ-Messages*
 ```shell
-#cf service-keys postgreSQLv9.4-dev
-#cf create-service-key postgreSQLv9.4-dev access-key
+# if need
+# cf service-keys postgreSQLv9.4-dev
+# cf create-service-key postgreSQLv9.4-dev access-key
 
 cf service-key postgreSQLv9.4-dev access-key
 ```
