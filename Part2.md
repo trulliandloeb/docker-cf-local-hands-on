@@ -253,3 +253,12 @@ eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vaTMzMzI0NHRyaWFsLmF1dGhlbnRpY2F0aW9uLnVz
 
 { "postgresql-9.3":[ { "name":"postgresql-lite", "label":"postgresql-9.3", "credentials":{ "dbname":"test", "hostname":"127.0.0.1", "password":"test123!", "port":"5432", "uri":"postgres://testuser:test123!@localhost:5432/test", "username":"testuser" }, "tags":[ "relational", "postgresql" ], "plan":"free" } ], "rabbitmq-lite":[ { "credentials":{ "hostname":"127.0.0.1", "password":"guest", "uri":"amqp://guest:guest@127.0.0.1:5672", "username":"guest" }, "label":"rabbitmq-lite", "tags":[ "rabbitmq33", "rabbitmq", "amqp" ] } ], "xsuaa":[ { "credentials":{ "clientid":"bill-demo-client-id", "clientsecret":"bill-demo-clientsecret", "identityzone":"bill-demo-identityzone", "identityzoneid":"bill-demo-identityzoneid", "tenantid":"bill-demo-tenantid", "tenantmode":"shared", "url":"bill-demo-dummy-url", "verificationkey":"-----BEGIN PUBLIC KEY-----MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1Ms8+eaZ/Af04VtxyxtXydz0PGnGKYWcbPGaCvVUb0Y5KtibykaNfC2zxqS9zwjimIm9PB+9YcDYEo/jhXzY6NIaowvryKR5YfiLPkODMkjFlNQh93o6CGhSrk6hkhJzvGAwQ0Md2uGJ5ZBigpPztvd5l9mptt8mq7e/WPoBylQIDAQAB-----END PUBLIC KEY-----", "xsappname":"bulletinboard-i333244" }, "label":"xsuaa", "name":"uaa-bulletinboard", "plan":"application", "tags":[ "xsuaa" ] } ] }
 
+
+branch: solution-24-Make-App-Secure
+
+via CF's xsuaa
+
+1. get token from CF
+2. use local approuter
+
+via own fake xsuaa
