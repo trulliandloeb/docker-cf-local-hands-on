@@ -28,6 +28,33 @@ cf service-key postgreSQLv9.4-dev access-key
  "username": "lNTt6T-3FV7veQuq"
 }
 ```
+```shell
+cf service-key rabbitMQv3.6-dev access-key
+```
+```json
+{
+ "end_points": [
+  {
+   "host": "10.11.241.0",
+   "network_id": "SF",
+   "port": "42979"
+  }
+ ],
+ "hostname": "10.11.241.0",
+ "password": "g041Z6BpHKgAkB9k",
+ "port": "42979",
+ "ports": {
+  "15672/tcp": "58492",
+  "15674/tcp": "55055",
+  "15675/tcp": "60352",
+  "1883/tcp": "44903",
+  "5672/tcp": "42979",
+  "61613/tcp": "60433"
+ },
+ "uri": "amqp://wGk7ZIrnn6apZNFH:g041Z6BpHKgAkB9k@10.11.241.0:42979",
+ "username": "wGk7ZIrnn6apZNFH"
+}
+```
 docker run --rm \
     --name some-postgres \
     -e POSTGRES_PASSWORD=test123! \
