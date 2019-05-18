@@ -59,7 +59,7 @@ cf service-key rabbitMQv3.6-dev access-key
 ```
 Configure SSH Tunnel
 ```shell
-cf ssh -L <<your port>>:<<service host or id>>:<<service port>> <<app name>>
+cf ssh -L <<your port>>:<<service host or ip>>:<<service port>> <<app name>>
 ```
 ```shell
 cf ssh -L 5432:10.11.241.0:52791 approuter
