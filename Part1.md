@@ -177,6 +177,7 @@ tail -f ./logs/catalina.out
 * <https://docs.docker.com/engine/reference/run/>
 * <http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html>
 * <https://labs.play-with-docker.com/>
+* <https://docs.cloudfoundry.org/devguide/deploy-apps/push-docker.html>
 ## Target 3: Make a image and run local
 What about make our app as a Docker image and run it?
 
@@ -212,10 +213,16 @@ RUN ["rm", "-fr", "/usr/local/tomcat/webapps/ROOT"]
 COPY ./bulletinboard-ads.war /usr/local/tomcat/webapps/ROOT.war
 ```
 Publish the image
-```
+```shell
 docker image tag bill-demo:0.0.1 trulliandloeb/bill-demo:0.0.1
 docker image push trulliandloeb/bill-demo:0.0.1
 #another way
 docker image build -t trulliandloeb/bill-demo:0.0.1 .
 ```
-## Question?
+Push it to cloud foundry
+```shell
+# cf push APP-NAME --docker-image MY-PRIVATE-REGISTRY.DOMAIN:PORT/REPO/IMAGE:TAG
+cf push bill-bulletinboard-ads-docker --docker-image trulliandloeb/bill-demo:0.0.1
+cf bind-service bill-bulletinboard-ads-docker postgreSQLv9.4-dev
+cf restage bill-bulletinboard-ads-docker
+```
