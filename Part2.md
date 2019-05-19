@@ -121,6 +121,8 @@ export CATALINA_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,a
 ```
 Debug local app
 ## Target: debug local app including authentication and authorization
+*Branch: solution-24-Make-App-Secure*
+
 docker run --rm \
     --name some-postgres \
     -e POSTGRES_PASSWORD=test123! \
