@@ -255,6 +255,35 @@ export VCAP_SERVICES='{ "postgresql-9.3":[ { "name":"postgresql-lite", "label":"
 ```
 Start app locally, access it with token
 ![Send request with token](https://raw.githubusercontent.com/trulliandloeb/docker-cf-local-hands-on/master/resource/Snipaste_2019-05-19_11-17-40.png)
+**2nd way: Config a local approuter***
+
+default-env.json
+```json
+{
+    "destinations": [
+        {
+            "name": "ads-destination",
+            "url": "http://localhost:8080",
+            "forwardAuthToken": true
+        }
+    ]
+}
+```
+default-services.json
+```json
+{
+    "uaa": {
+        "url": "https://i333244trial.authentication.us30.hana.ondemand.com",
+        "clientid": "sb-bulletinboard-i333244!t431",
+        "clientsecret": "SCU3s7F0zGniNgc/bNt7fa71hhc=",
+        "xsappname": "bulletinboard-i333244!t431"
+    }
+}
+```
+Run it
+```shell
+npm start
+```
 
 https://github.com/auth0/node-jsonwebtoken
 
