@@ -284,6 +284,7 @@ Run it
 ```shell
 npm start
 ```
+Access through approuter: http://localhost:5000/ads/api/v1/ads
 
 https://github.com/auth0/node-jsonwebtoken
 
