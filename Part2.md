@@ -288,8 +288,6 @@ Access through approuter: http://localhost:5000/ads/api/v1/ads
 ### via local "XSUAA service"
 Make own certificate
 
-*Step 1: Generate*
-
 Generate private key
 ```shell
 openssl genrsa -out bill_private.pem 2048
