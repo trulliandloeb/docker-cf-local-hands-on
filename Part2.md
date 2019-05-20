@@ -313,3 +313,4 @@ Access app with generated JWT
 * <https://docs.cloudfoundry.org/api/uaa/version/4.31.0/index.html>
 * <http://www.marcoder.com/2017/12/11/jwt-rsa/>
 * <https://medium.com/@oyrxx/rsa%E7%A7%98%E9%92%A5%E4%BB%8B%E7%BB%8D%E5%8F%8Aopenssl%E7%94%9F%E6%88%90%E5%91%BD%E4%BB%A4-d3fcc689513f>
+* <https://github.wdf.sap.corp/xs2/approuter.js>
