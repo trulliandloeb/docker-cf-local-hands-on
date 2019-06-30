@@ -4,7 +4,7 @@ var payload = require('./payload.json');
 
 payload.auth_time = payload.iat = Math.floor(Date.now() / 1000);
 
-var privateKey = fs.readFileSync('./rsa_private_unencrypted.pem');
+var privateKey = fs.readFileSync('./bill_private.pem');
 jwt.sign(payload, privateKey, {
 	algorithm: 'RS256',
 	expiresIn: "1h",
